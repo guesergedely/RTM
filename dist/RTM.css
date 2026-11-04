@@ -1,1 +1,62 @@
-dist/RTM.css
+/* ==========================================================================
+    1. STYLES POUR L'ÉCRAN (WEB)
+========================================================================== */
+body { font-family: Arial, sans-serif; margin: 30px; background-color: #f4f4f9; color: #333; } 
+
+.container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } 
+h1 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 10px; } 
+
+/* Style du tableau */
+th { border: 1px solid #ddd; padding: 10px; font-size: 16px; background-color: #0056b3; 
+color: white; text-align: center;}
+tbody > tr > td { border: 1px solid #ddd; padding: 10px 5px; font-size: 13px; }
+tfoot > tr > td { background-color: #0056b3; color: white; text-align: center;
+     padding: 10px 5px; font-size: 16px;}
+
+/* Style du bouton d'action */
+.btn-apercu { background-color: #0056b3; color: white; border: none; padding: 12px 24px; font-size: 16px; cursor: pointer; border-radius: 5px; margin-bottom: 20px; font-weight: bold; }
+.btn-apercu:hover { background-color: #004085; }
+
+.print-header, .print-footer{ display: none;} 
+
+/* ==========================================================================
+    2. STYLES POUR L'IMPRESSION / LE PDF (Déclenché par window.print)
+    ========================================================================== */
+@media print {
+    /* Masquer les éléments inutiles sur le PDF (boutons, menus de navigation) */
+    .no-print { display: none !important; } 
+    
+    /* Forcer le contenu à prendre toute la page A4 sans marges web */
+    body { background: white; color: #000; margin: 0; padding: 0; } 
+    .container { box-shadow: none;  max-width: 100%; }
+
+   
+    /* ////////////////////// */
+
+    /* .print-header{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+    }
+
+    .print-footer{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px;
+    }
+
+    body{margin: 0;}
+
+    @page{ margin: 20mm 15mm 20mm 15mm; }; */
+
+}
